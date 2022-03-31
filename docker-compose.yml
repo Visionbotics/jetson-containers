@@ -1,2 +1,4 @@
 flydetector:
-  image: 
+  image: CONTAINER_NAME
+  volumes:
+    - Flydetector_slave_ROS/:/ws
