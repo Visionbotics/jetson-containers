@@ -2,3 +2,4 @@ flydetector:
   image: ros:foxy-ros-base-l4t-r32.7.1
   volumes:
     - Flydetector_slave_ROS/:/ws
+  command: tail -F anything
