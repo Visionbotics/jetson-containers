@@ -225,6 +225,8 @@ RUN sed -i \
 
 RUN echo 'source ${ROS_ROOT}/install/setup.bash' >> /root/.bashrc
 
+RUN apt-get install nano
+
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
 WORKDIR /
