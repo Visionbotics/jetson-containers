@@ -230,6 +230,8 @@ RUN echo 'source /ws/install/setup.bash' >> /root/.bashrc
 RUN apt-get update && \
 	apt-get install nano
 
+RUN python3 -m pip install --upgrade Pillow
+
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
 WORKDIR /
