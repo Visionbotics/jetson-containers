@@ -224,6 +224,17 @@ RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.74.0/source/boost_
 	sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/local.conf' && \
 	ldconfig
 
+RUN apt install -y build-essential git cmake libfreeimage-dev
+RUN apt install -y cmake-curses-gui
+RUN apt install -y libopenblas-dev libfftw3-dev liblapacke-dev
+RUN cd && \
+	git clone --recursive https://github.com/arrayfire/arrayfire.git && \
+	cd arrayfire && \
+	mkdir build && cd build && \
+	cmake .. -DAF_BUILD_OPENCL=OFF -DCMAKE_BUILD_TYPE=Release -DAF_BUILD_EXAMPLES=OFF -DBUILD_TEST=OFF -DBUILD_GRAPHICS=OFF 
+RUN make -j4
+RUN make install
+
 
 # #
 # # Install Arrayfire
