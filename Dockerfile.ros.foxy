@@ -217,7 +217,7 @@ ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 #
 RUN apt-get install -y gnupg2 ca-certificates software-properties-common
 RUN apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB && \
-RUN apt-add-repository "deb [arch=amd64] https://repo.arrayfire.com/ubuntu focal main" && \
+	apt-add-repository "deb [arch=amd64] https://repo.arrayfire.com/ubuntu focal main" && \
 	apt-get update && \
 	apt-get install -y arrayfire && \
 	apt-get install -y arrayfire-dev
