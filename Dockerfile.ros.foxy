@@ -217,29 +217,29 @@ ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 #
 RUN apt-get install -y gnupg2 ca-certificates software-properties-common
 RUN apt-get update && apt-get install -y apt-utils
-# RUN apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
-# RUN apt-add-repository "deb [arch=amd64] https://repo.arrayfire.com/ubuntu bionic main"
-# RUN apt-get update
-# RUN apt-get install -y arrayfire-dev
-# RUN apt-get install -y arrayfire
+RUN apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
+RUN apt-add-repository "deb [arch=amd64] https://repo.arrayfire.com/ubuntu bionic main"
+RUN apt-get update
+RUN apt-get install -y arrayfire-dev
+RUN apt-get install -y arrayfire
 
-# ==================================================================
-# arrayfire https://github.com/arrayfire/arrayfire/wiki/
-# ------------------------------------------------------------------
-RUN cd /tmp && git clone --branch v3.8 --recursive https://github.com/arrayfire/arrayfire.git && \
-# RUN cd /tmp && wget https://github.com/arrayfire/arrayfire/releases/download/v3.8.1/arrayfire-full-3.8.1.tar.bz2
-    cd arrayfire && git checkout b443e14 && \
-    mkdir build && cd build && \
-    cmake .. -DCMAKE_BUILD_TYPE=Release && \
-    make -j8 && \
-    make install && \
-# ========================================================= =========
-# config & cleanup
-# ------------------------------------------------------------------
-    ldconfig && \
-    apt-get clean && \
-    apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/* /tmp/* ~/*
+# # ==================================================================
+# # arrayfire https://github.com/arrayfire/arrayfire/wiki/
+# # ------------------------------------------------------------------
+# RUN cd /tmp && git clone --branch v3.8 --recursive https://github.com/arrayfire/arrayfire.git && \
+# # RUN cd /tmp && wget https://github.com/arrayfire/arrayfire/releases/download/v3.8.1/arrayfire-full-3.8.1.tar.bz2
+#     cd arrayfire && git checkout b443e14 && \
+#     mkdir build && cd build && \
+#     cmake .. -DCMAKE_BUILD_TYPE=Release && \
+#     make -j8 && \
+#     make install && \
+# # ========================================================= =========
+# # config & cleanup
+# # ------------------------------------------------------------------
+#     ldconfig && \
+#     apt-get clean && \
+#     apt-get autoremove && \
+#     rm -rf /var/lib/apt/lists/* /tmp/* ~/*
     
 # 
 # setup entrypoint
