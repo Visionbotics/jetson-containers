@@ -217,6 +217,7 @@ ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 #
 RUN apt-get update
 RUN apt-get install -y gnupg2 ca-certificates software-properties-common
+RUN apt-get update
 RUN apt-get install apt-utils wget build-essential git cmake libfreeimage-dev cmake-curses-gui
 RUN cd /tmp
 RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB && \
