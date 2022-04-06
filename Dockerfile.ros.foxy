@@ -228,7 +228,7 @@ RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCT
 # RUN apt-get update && apt-get install -y apt-utils
 RUN apt install build-essential cmake cmake-curses-gui
 RUN apt install libfreeimage3
-RUN pip install scikit-learn
+RUN python3 -m pip install scikit-learn
 RUN apt install libatlas3gf-base libatlas-base-dev libfftw3-dev liblapacke-dev
 RUN wget https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB && \
 	apt-key add GPG-PUB-KEY-ARRAYFIRE-2020.PUB && \
