@@ -230,7 +230,7 @@ RUN apt install build-essential cmake cmake-curses-gui
 RUN apt install libfreeimage3
 # RUN python3 -m pip install scikit-learn
 # RUN apt install libatlas3gf-base libatlas-base-dev libfftw3-dev liblapacke-dev
-RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/bionic/<architecture>/7fa2af80.pub
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/bionic/arm64/7fa2af80.pub
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/bionic/arm64/cuda-bionic.pin && \
 	mv cuda-bionic.pin /etc/apt/preferences.d/cuda-repository-pin-600
 RUN wget https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB && \
