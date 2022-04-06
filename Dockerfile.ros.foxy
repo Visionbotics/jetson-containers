@@ -215,10 +215,10 @@ ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 #
 # Install Arrayfire
 #
-RUN apt-get update
-RUN apt-get install -y gnupg2 ca-certificates software-properties-common
-RUN apt-get update
-RUN apt-get install -y apt-utils wget build-essential git cmake libfreeimage-dev cmake-curses-gui
+RUN apt update
+RUN apt install -y gnupg2 ca-certificates software-properties-common
+RUN apt update
+RUN apt install -y apt-utils wget build-essential git cmake libfreeimage-dev cmake-curses-gui
 RUN cd /tmp
 RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB && \
 	apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB && \
