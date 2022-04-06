@@ -226,7 +226,7 @@ RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.74.0/source/boost_
 
 RUN apt install -y build-essential git cmake libfreeimage-dev
 # RUN apt install -y cmake-curses-gui
-RUN apt install -y libopenblas-dev libfftw3-dev liblapacke-dev
+# RUN apt install -y libopenblas-dev libfftw3-dev liblapacke-dev
 RUN cd && \
 	git clone --recursive https://github.com/arrayfire/arrayfire.git && \
 	cd arrayfire && \
