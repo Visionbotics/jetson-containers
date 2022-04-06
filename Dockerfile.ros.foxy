@@ -228,9 +228,9 @@ RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCT
 # RUN apt-get update && apt-get install -y apt-utils
 RUN apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
 RUN apt-add-repository "deb [arch=amd64] https://repo.arrayfire.com/ubuntu bionic main"
-RUN apt-get update
-RUN apt-get install -y arrayfire-dev
-RUN apt-get install -y arrayfire
+RUN apt update
+RUN apt install -y arrayfire-dev
+RUN apt install -y arrayfire
 
 # # ==================================================================
 # # arrayfire https://github.com/arrayfire/arrayfire/wiki/
