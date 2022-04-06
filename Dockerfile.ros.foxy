@@ -309,7 +309,7 @@ RUN cd /tmp && \
     echo "deb https://apt.repos.intel.com/oneapi all main" | tee /etc/apt/sources.list.d/oneAPI.list && \
     add-apt-repository "deb https://apt.repos.intel.com/oneapi all main" && \
     apt update -y
-RUN sudo apt install -y intel-basekit
+# RUN apt install -y intel-basekit
 #
 # AF_DISABLE_GRAPHICS - Environment variable to disable graphics at
 # runtime due to lack of graphics support by docker - visit
@@ -317,8 +317,8 @@ RUN sudo apt install -y intel-basekit
 # for more information
 ENV AF_PATH=/opt/arrayfire AF_DISABLE_GRAPHICS=1
 ARG COMPILE_GRAPHICS=OFF
-RUN source /opt/intel/oneapi/setvars.sh && \
-    git clone --depth 1 --recursive https://github.com/arrayfire/arrayfire.git -b master && \
+# RUN source /opt/intel/oneapi/setvars.sh
+RUN git clone --depth 1 --recursive https://github.com/arrayfire/arrayfire.git -b master && \
     cd arrayfire && mkdir build && cd build && \
     cmake .. -DCMAKE_INSTALL_PREFIX=/opt/arrayfire-3 \
              -DCMAKE_BUILD_TYPE=Release \
