@@ -226,9 +226,12 @@ RUN wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCT
 	apt update
 # RUN apt-get install -y gnupg2 ca-certificates software-properties-common
 # RUN apt-get update && apt-get install -y apt-utils
+RUN apt install build-essential cmake cmake-curses-gui
+RUN apt install libfreeimage3
+RUN apt install libatlas3gf-base libatlas-dev libfftw3-dev liblapacke-dev
 RUN wget https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB && \
 	apt-key add GPG-PUB-KEY-ARRAYFIRE-2020.PUB && \
-	sh -c 'echo deb [arch=amd64] https://repo.arrayfire.com/ubuntu focal main > /etc/apt/sources.list.d/arrayfire.list' && \
+	sh -c 'echo deb [arch=amd64] https://repo.arrayfire.com/ubuntu bionic main > /etc/apt/sources.list.d/arrayfire.list' && \
 	apt update
 # RUN apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
 # RUN apt-add-repository "deb [arch=amd64] https://repo.arrayfire.com/ubuntu bionic main"
