@@ -232,9 +232,9 @@ RUN cd && \
 	git clone --recursive https://github.com/arrayfire/arrayfire.git && \
 	cd arrayfire && \
 	mkdir build && cd build && \
-	cmake .. -DAF_BUILD_OPENCL=OFF -DCMAKE_BUILD_TYPE=Release -DAF_BUILD_EXAMPLES=OFF -DBUILD_TEST=OFF -DBUILD_GRAPHICS=OFF 
-RUN make -j4
-RUN make install
+	cmake .. -DAF_BUILD_OPENCL=OFF -DCMAKE_BUILD_TYPE=Release -DAF_BUILD_EXAMPLES=OFF -DBUILD_TEST=OFF -DBUILD_GRAPHICS=OFF %% \
+	make -j4 %% \
+	make install
 
 
 # #
