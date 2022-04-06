@@ -233,7 +233,7 @@ RUN cd && \
 	cd arrayfire && \
 	mkdir build && cd build && \
 	cmake .. -DAF_BUILD_OPENCL=OFF -DCMAKE_BUILD_TYPE=Release -DAF_BUILD_EXAMPLES=OFF -DBUILD_TEST=OFF -DBUILD_GRAPHICS=OFF %% \
-	make -j4 %% \
+	make -j8 %% \
 	make install
 
 
